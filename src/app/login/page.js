@@ -54,7 +54,7 @@ export default function LoginPage() {
                 </div>
                 {errorMessage && <p className="error-message">{errorMessage}</p>}
                 <Link
-                    href="/"
+                    href="/dashboard"
                     onClick={handleSignIn}
                     className="sign-in-button"
                 >
