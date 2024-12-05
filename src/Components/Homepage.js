@@ -41,7 +41,7 @@ export default function Homepage() {
                     <a href="#whatIsIt">What is It?</a>
                     <a href="#whatNew">What's New?</a>
                     <a href="#help">How's it Help?</a>
-                    <a href="#login" className="navbar-login">Login</a>
+                    <a href="/login" className="navbar-login">Login</a>
                 </div>
             </div>
             <div className="hero-container">
