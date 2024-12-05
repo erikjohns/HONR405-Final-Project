@@ -1,11 +1,28 @@
+'use client';
+
 import '@/Styling/Dashboard.css';
 import Link from "next/link";
 import CustomChart from "@/Components/Chart";
 import {falsifiedData} from "@/Components/Data";
+import {useState} from "react";
+import Modal from "@/Components/Modal";
 
 export default function DashboardPage () {
     const labels = falsifiedData.map((entry) => entry.date);
     const dataValues = falsifiedData.map((entry) => entry.data_points);
+
+    const [isOpen, setIsOpen] = useState(false);
+    const [modalContent, setModalContent] = useState(null);
+
+    const openModal = (content) => {
+        setModalContent(content);
+        setIsOpen(true);
+    }
+
+    const closeModal = () => {
+        setIsOpen(false);
+        setModalContent(null);
+    }
 
     return (
         <div className={'dashboard-page'}>
@@ -30,7 +47,7 @@ export default function DashboardPage () {
                 <div className={'side-bar-container'}>
                     <div className={'side-bar-section'}>
                         <h3>Want to Clean Your Memories?</h3>
-                        <button>Use NeuAI to Auto-Manage Memories</button>
+                        <button onClick={() => openModal(<p>This is the content for the button</p>)}>Use NeuAI to Auto-Manage Memories</button>
                     </div>
                     <div className={'side-bar-section'}>
                         <h1>1,893</h1>
@@ -42,6 +59,10 @@ export default function DashboardPage () {
                     </div>
                 </div>
             </div>
+
+            <Modal isOpen={isOpen} onClose={closeModal}>
+                {modalContent}
+            </Modal>
         </div>
     )
 }
