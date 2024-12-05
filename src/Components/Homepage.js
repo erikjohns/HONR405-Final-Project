@@ -110,9 +110,10 @@ export default function Homepage() {
                 <div className="section-text section-text-right">
                     <h1>How Does it Help?</h1>
                     <p>
-
+                        NeuMemories utilizes the NeuMental&trade; component of the Neural Nanochip&trade; to automatically
+                        recognize memories for adjusting that may be upsetting. We are able to fine-tune your mental health
+                        based on your memories and experiences. Everyone is happy!
                     </p>
-                    <button className="section-button">Read More</button>
                 </div>
             </div>
             <Modal isOpen={isOpen} onClose={closeModal}>
