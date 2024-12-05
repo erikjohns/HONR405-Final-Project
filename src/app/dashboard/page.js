@@ -29,26 +29,28 @@ export default function DashboardPage () {
         <div className={'dashboard-page'}>
             <div className={'dashboard-page-header'}>
                 <Link href="/" className={'logo-container'}>
-                    <img src="/logo.png" alt="Logo" className="navbar-logo" />
+                    <img src="/logo.png" alt="Logo" className="navbar-logo"/>
                     <div className={'logo-text'}>
                         <h1>NeuMemories</h1>
                         <h3>Where Your Future Begins</h3>
                     </div>
                 </Link>
-                <img src={'/champ.jpg'} alt={'profile'} className={'profile-picture'} />
+                <img src={'/champ.jpg'} alt={'profile'} className={'profile-picture'}/>
             </div>
 
             <div className={'dashboard-page-content'}>
                 <div className={'memory-graph'}>
                     <h1>Memories Managed in 2024</h1>
                     <div className={'chart-container'}>
-                        <CustomChart data={dataValues} labels={labels} />
+                        <CustomChart data={dataValues} labels={labels}/>
                     </div>
                 </div>
                 <div className={'side-bar-container'}>
                     <div className={'side-bar-section'}>
                         <h3>Want to Clean Your Memories?</h3>
-                        <button onClick={() => openModal(<p>This is the content for the button</p>)}>Use NeuAI to Auto-Manage Memories</button>
+                        <button onClick={() => openModal(<ModalMemories />)}>Use NeuAI to
+                            Auto-Manage Memories
+                        </button>
                     </div>
                     <div className={'side-bar-section'}>
                         <h1>1,893</h1>
@@ -56,13 +58,17 @@ export default function DashboardPage () {
                     </div>
                     <div className={'side-bar-section'}>
                         <h1>96</h1>
-                        <h3>Your Mental Health<br />Score Today</h3>
+                        <h3>Your Mental Health<br/>Score Today</h3>
                     </div>
                 </div>
             </div>
 
+            <button className='terms' onClick={() => openModal(<p style={{fontWeight: '700', marginTop: '2rem'}}>We absolutely 100% sell all of your memories and your mental health data. We add new memories when it is helps corporate America, and remove memories of you finding out that we ever did this.</p>)}>
+                Terms & Conditions
+            </button>
+
             <Modal isOpen={isOpen} onClose={closeModal}>
-                <ModalMemories />
+                {modalContent}
             </Modal>
         </div>
     )

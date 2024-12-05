@@ -98,7 +98,7 @@ body {
     gap: 1rem;
 }
 
-.side-bar-section button {
+.dashboard-page button {
     border: 2px solid white;
     border-radius: 0.75rem;
     background-color: transparent;
@@ -109,8 +109,12 @@ body {
     transition: 0.15s ease-in-out;
 }
 
-.side-bar-section button:hover {
+.dashboard-page button:hover {
     background-color: white;
     color: #141414;
     cursor: pointer;
+}
+
+.terms {
+    margin: 2rem auto;
 }
