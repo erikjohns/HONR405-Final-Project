@@ -6,6 +6,7 @@ import CustomChart from "@/Components/Chart";
 import {falsifiedData} from "@/Components/Data";
 import {useState} from "react";
 import Modal from "@/Components/Modal";
+import ModalMemories from "@/Components/ModalMemories";
 
 export default function DashboardPage () {
     const labels = falsifiedData.map((entry) => entry.date);
@@ -61,7 +62,7 @@ export default function DashboardPage () {
             </div>
 
             <Modal isOpen={isOpen} onClose={closeModal}>
-                {modalContent}
+                <ModalMemories />
             </Modal>
         </div>
     )
